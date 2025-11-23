@@ -76,7 +76,7 @@ const Home = () => {
               <h2 className="text-4xl font-bold gradient-text">About Us</h2>
             </div>
             <p className="text-lg text-foreground/80 leading-relaxed max-w-4xl">
-              ReNova is at the forefront of sustainable technology management. We believe that 
+              EcoBot is at the forefront of sustainable technology management. We believe that 
               every electronic device deserves a second chance, and every piece of data deserves 
               secure handling. Our platform combines cutting-edge technology with environmental 
               consciousness to create a seamless e-waste recycling experience.

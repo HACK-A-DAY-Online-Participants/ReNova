@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark carbon background */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    /* Card with glassmorphism */
+    --card: 270 30% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 270 30% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Rich violet primary */
+    --primary: 270 61% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 270 61% 50%;
+
+    /* Darker violet secondary */
+    --secondary: 270 40% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted dark surfaces */
+    --muted: 270 20% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Techy turquoise accent */
+    --accent: 169 51% 48%;
+    --accent-foreground: 0 0% 4%;
+    --accent-glow: 169 51% 60%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 20% 18%;
+    --input: 270 20% 18%;
+    --ring: 270 61% 36%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 61% 36%), hsl(270 61% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(169 51% 48%), hsl(169 51% 60%));
+    --gradient-radial: radial-gradient(circle at center, hsl(270 61% 36% / 0.3), transparent);
+
+    /* Glows */
+    --glow-primary: 0 0 40px hsl(270 61% 50% / 0.4);
+    --glow-accent: 0 0 40px hsl(169 51% 60% / 0.4);
+    --glow-soft: 0 10px 30px hsl(270 61% 36% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Futuristic scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+    transition: var(--transition-smooth);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .glow-soft {
+    box-shadow: var(--glow-soft);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-panel {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
